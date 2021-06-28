@@ -8,7 +8,6 @@ const CardDisplay = (props) => {
         alt="card"
         style={{ width: 25 + '%' }}
         onClick={props.handleClick}
-        key={i}
         id={i}
       />
     )
@@ -17,7 +16,7 @@ const CardDisplay = (props) => {
   for (let i = 0; i < 8; i++) {
     randomArray.push(items[Math.floor(Math.random() * items.length)])
   }
-  return <div>{items}</div>
+  return <div>{randomArray}</div>
 }
 
 export default CardDisplay
