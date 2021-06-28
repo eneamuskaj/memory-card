@@ -16,7 +16,7 @@ const CardDisplay = (props) => {
   for (let i = 0; i < 8; i++) {
     randomArray.push(items[Math.floor(Math.random() * items.length)])
   }
-  return <div>{randomArray}</div>
+  return <div>{items}</div>
 }
 
 export default CardDisplay

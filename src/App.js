@@ -8,8 +8,15 @@ const App = () => {
   const [memory, setMemory] = useState([])
 
   useEffect(() => {
-    console.log(memory)
     console.log('use effect ran')
+    for (let i = 0; i < memory.length; i++) {
+      if (memory.indexOf(memory[i]) !== memory.lastIndexOf(memory[i])) {
+        setMemory([])
+        setCount(0)
+        console.log('stop here')
+      }
+    }
+    console.log('cotinue here')
   })
 
   const handleClick = (event) => {
@@ -18,9 +25,8 @@ const App = () => {
     const gameData = memory
     gameData.push(cardName)
     setMemory(gameData)
-    console.log('handle click ran')
   }
-
+  console.log('Render')
   return (
     <div>
       <ScoreBoard count={count} />
