@@ -5,6 +5,7 @@ import ScoreBoard from './components/scoreBoard'
 
 const App = () => {
   const [count, setCount] = useState(0)
+  const [highScore, setHighScore] = useState(0)
   const [memory, setMemory] = useState([])
 
   useEffect(() => {
@@ -12,6 +13,7 @@ const App = () => {
     for (let i = 0; i < memory.length; i++) {
       if (memory.indexOf(memory[i]) !== memory.lastIndexOf(memory[i])) {
         setMemory([])
+        setHighScore(count)
         setCount(0)
         console.log('stop here')
       }
@@ -29,7 +31,7 @@ const App = () => {
   console.log('Render')
   return (
     <div>
-      <ScoreBoard count={count} />
+      <ScoreBoard count={count} highScore={highScore} />
       <CardDisplay handleClick={handleClick} />
     </div>
   )

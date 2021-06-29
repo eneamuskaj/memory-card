@@ -1,5 +1,10 @@
 const ScoreBoard = (props) => {
-  return <div>Score is {props.count}</div>
+  return (
+    <div>
+      <p>Score is {props.count}</p>
+      <p>High Score is {props.highScore}</p>
+    </div>
+  )
 }
 
 export default ScoreBoard
